@@ -1306,7 +1306,7 @@ input, select, textarea {
 	}
 
 	body {
-		background-image: url("images/overlay.png"), url("images/bg.jpg");
+		background-color: #e4e4e4;
 		background-repeat: repeat, no-repeat;
 		background-size: auto, 100% 100%;
 		background-attachment: fixed;
@@ -1365,8 +1365,9 @@ input, select, textarea {
 		}
 
 	strong, b, h1, h2, h3, h4, h5, h6 {
-		font-weight: 400;
+		font-weight: 600;
 		color: #363636;
+		font-family: 'Roboto', sans-serif;
 	}
 
 	h1 {
@@ -1382,6 +1383,8 @@ input, select, textarea {
 	h3, h4, h5, h6 {
 		font-size: 1.25em;
 		letter-spacing: -0.015em;
+		font-family: 'Roboto', sans-serif;
+
 	}
 
 	@media screen and (max-width: 736px) {
@@ -1558,6 +1561,12 @@ input, select, textarea {
 		.image.fit {
 			display: block;
 			width: 100%;
+		}
+
+		.image.fit img {
+			display: block;
+			width: 100%;
+			border-radius: 15px !important;
 		}
 
 		.image.featured {
@@ -1778,7 +1787,7 @@ input, select, textarea {
 		#nav a {
 			position: relative;
 			display: inline-block;
-			color: #ffffff;
+			color: #4d4d4d;
 			width: 1em;
 			height: 1em;
 			line-height: 0.9em;
@@ -1856,6 +1865,7 @@ input, select, textarea {
 				}
 
 			#nav a.active {
+				color: #ffffff;
 				opacity: 1.0;
 			}
 
