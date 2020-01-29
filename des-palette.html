@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Des Palette</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .block {
+      cursor: pointer;
+      width: 100px;
+      height: 100px;
+      border-radius: 1rem;
+      margin-bottom: 8px;
+      -webkit-transition: width 0.4s;
+      /* Safari prior 6.1 */
+      transition: width 0.4s;
+    }
+
+    .warning {
+      display: none;
+      width: auto;
+      height: auto;
+      border-radius: 1rem;
+      padding: 16px;
+      color: whitesmoke;
+      font-weight: 300;
+      font-size: large;
+
+    }
+
+    .block:hover {
+      width: 200px;
+    }
+
+    .block span {
+      display: none;
+    }
+
+    .block:hover span {
+      display: block;
+      position: relative;
+      left: 32px;
+      top: 16px;
+      color: rgba(0, 0, 0, 0.322);
+      font-weight: 300;
+      font-size: large;
+    }
+
+    .block:hover span h3 {
+      color: white;
+    }
+
+    .yellow-one {
+      background: #dfd676;
+    }
+
+    .yellow-two {
+      background: #ddc16b;
+    }
+
+    .yellow-three {
+
+      background: #d6ac62;
+    }
+
+    .red-one {
+
+      background: #ee5454;
+    }
+
+    .red-two {
+      background: #e63d51;
+    }
+
+    .red-three {
+      background: #ca3a4e;
+    }
+
+    .green-one {
+      background: #9ac063;
+    }
+
+    .green-two {
+      background: #60b160;
+    }
+
+    .green-three {
+      background: #549e6a;
+    }
+
+    .violet-one {
+      background: #b195a4;
+    }
+
+    .violet-two {
+      background: #8d7e9e;
+    }
+
+    .violet-three {
+      background: #74708e;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <img clas="responsive-img" src="assets/header.png" />
+    </div>
+    <div class="row" style="padding-top: 32px;">
+      <div class="col-md-3">
+        <div onclick="copy(event)" class="block yellow-one">
+          <span>
+            <div class="container">
+              <h3>Yellow One</h3>
+              #dfd676
+            </div>
+          </span>
+        </div>
+        <div onclick="copy(event)" class="block yellow-two"><span>
+            <div class="container">
+              <h3>Yellow Two</h3>
+
+              #ddc16b
+            </div>
+          </span></div>
+        <div onclick="copy(event)" class="block yellow-three"><span>
+            <div class="container">
+              <h3>Yellow Three</h3>
+              #d6ac62
+            </div>
+          </span></div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="copy(event)" class="block green-one">
+          <span>
+            <div class="container">
+              <h3>Green One</h3>
+              #ee5454
+            </div>
+          </span>
+        </div>
+        <div onclick="copy(event)" class="block green-two">
+          <span>
+            <div class="container">
+              <h3>Green Two</h3>
+
+              #e63d51
+            </div>
+          </span>
+        </div>
+        <div onclick="copy(event)" class="block green-three">
+          <span>
+            <div class="container">
+              <h3>Green Three</h3>
+              #ca3a4e
+            </div>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="copy(event)" class="block red-one">
+          <span>
+            <div class="container">
+              <h3>Red One</h3>
+
+              #9ac063
+            </div>
+          </span>
+        </div>
+        <div onclick="copy(event)" class="block red-two">
+          <span>
+            <div class="container">
+              <h3>Red Two</h3>
+
+              #60b160
+            </div>
+          </span>
+        </div>
+        <div onclick="copy(event)" class="block red-three">
+          <span>
+            <div class="container">
+              <h3>Red Three</h3>
+
+              #549e6a
+            </div>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="copy(event)" class="block violet-one">
+          <span>
+            <div class="container">
+              <h3>Violet One</h3>
+
+              #b195a4
+            </div>
+          </span>
+        </div>
+        <div onclick="copy(event)" class="block violet-two">
+          <span>
+            <div class="container">
+              <h3>Violet Two</h3>
+
+              #8d7e9e
+            </div>
+          </span>
+        </div>
+        <div onclick="copy(event)" class="block violet-three">
+          <span>
+            <div class="container">
+              <h3>Violet Three</h3>
+
+              #74708e
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 32px;">
+      <h3>Fonte oficial: <a href="https://www.wfonts.com/font/century-gothic">Century Gothic</a></h3>
+    </div>
+    <div class="row" style="margin-top: 32px;">
+      <span class="warning violet-one"></span>
+    </div>
+  </div>
+  <script>
+    var colors = {
+      'yellow-one': '#dfd676',
+      'yellow-two': '#ddc16b',
+      'yellow-three': '#d6ac62',
+      'green-one': '#ee5454',
+      'green-two': '#e63d51',
+      'green-three': '#ca3a4e',
+      'red-one': '#9ac063',
+      'red-two': '#60b160',
+      'red-three': '#549e6a',
+      'violet-one': '#b195a4',
+      'violet-two': '#8d7e9e',
+      'violet-three': '#74708e'
+    }
+
+    function copy(event) {
+      event.preventDefault();
+
+      const list = event.path.map(element => element.classList);
+      const colorLClass = list.filter(a => {
+        if (a) {
+          return a.contains('block')
+        }
+        return false;
+      })[0][1];
+
+      copyToClipboard(colorLClass);
+    }
+
+    function copyToClipboard(key) {
+      const el = document.createElement('textarea');
+      el.value = colors[key];
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      warn(colors[key] + ' foi copiado para a área de transferência.')
+    }
+
+    function warn(text) {
+      const warn = document.getElementsByClassName('warning')[0]
+      warn.textContent = text;
+      warn.style.display = 'block';
+
+      setTimeout(() => {
+        warn.textContent = '';
+        warn.style.display = 'none';
+      }, 2000)
+    }
+  </script>
+
+</body>
+
+</html>
